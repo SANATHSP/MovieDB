@@ -1,23 +1,98 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import MovieList from "./components/MovieList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
+  const [movies, setMovies] = useState([
+    {
+      Title: "The Fast and the Furious",
+      Year: "2001",
+      imdbID: "tt0232500",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BNzlkNzVjMDMtOTdhZC00MGE1LTkxODctMzFmMjkwZmMxZjFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+    },
+    {
+      Title: "Fast & Furious 6",
+      Year: "2013",
+      imdbID: "tt1905041",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "Fast & Furious",
+      Year: "2009",
+      imdbID: "tt1013752",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BYjQ1ZTMxNzgtZDcxOC00NWY5LTk3ZjAtYzRhMDhlNDZlOWEzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Fast and the Furious: Tokyo Drift",
+      Year: "2006",
+      imdbID: "tt0463985",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "2 Fast 2 Furious",
+      Year: "2003",
+      imdbID: "tt0322259",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMzExYjcyYWMtY2JkOC00NDUwLTg2OTgtMDI3MGY2OWQzMDE2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    },
+    {
+      Title: "Fast & Furious Presents: Hobbs & Shaw",
+      Year: "2019",
+      imdbID: "tt6806448",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOTIzYmUyMmEtMWQzNC00YzExLTk3MzYtZTUzYjMyMmRiYzIwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "Turbo Charged Prelude to 2 Fast 2 Furious",
+      Year: "2003",
+      imdbID: "tt2055789",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BY2Y2ODBjN2QtZTE3OS00NDliLWIwZjktMmY5MmQyZDMzNWMyXkEyXkFqcGdeQXVyNjUyODQ4NzE@._V1_SX300.jpg",
+    },
+    {
+      Title: "Fast & Furious Spy Racers",
+      Year: "2019–2021",
+      imdbID: "tt8322592",
+      Type: "series",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BYTdmYjFiZTYtZGZlZi00YTBjLWIxYmItYTQ5OWNiZmM5MzczXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    },
+    {
+      Title: "Fast & Furious: Supercharged",
+      Year: "2015",
+      imdbID: "tt3757982",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BN2M2NzhkMWUtZGJkOS00NjZiLThkOGItMWMwOGQxNjFkMDJhXkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Fast and the Furious",
+      Year: "1954",
+      imdbID: "tt0046969",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BZmI3YmNhNzktOTMzNC00ODg4LTk3YmQtMGI2ZGQzNzcwZmRkXkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_SX300.jpg",
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <div className="rows">
+        <MovieList movies={movies} />
+      </div>
+
+      {/*  passing movies as prop for movie list comp */}
     </div>
   );
 }
